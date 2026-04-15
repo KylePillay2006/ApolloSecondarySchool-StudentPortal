@@ -1,0 +1,208 @@
+{
+  "Grade 8": {
+    "Mathematics": [
+      {
+        "name": "FS-Maths-Grade-8-MOCK-June-2024-QP-only",
+        "url": "papers/grade 8/mathematics/FS-Maths-Grade-8-MOCK-June-2024-QP-only.pdf"
+      },
+      {
+        "name": "EC-ORT-Maths-Grade-8-June-2024-QP-and-Memo",
+        "url": "papers/grade 8/mathematics/EC-ORT-Maths-Grade-8-June-2024-QP-and-Memo.pdf"
+      },
+      {
+        "name": "GR 8 MATH MARCH CONTROLLED TEST-1",
+        "url": "papers/grade 8/mathematics/GR 8 MATH MARCH CONTROLLED TEST-1.pdf"
+      },
+      {
+        "name": "GR 8 MATH MARCH CONTROLLED TEST MEMORANDUM-1",
+        "url": "papers/grade 8/mathematics/GR 8 MATH MARCH CONTROLLED TEST MEMORANDUM-1.pdf"
+      },
+      {
+        "name": "LP-VW-Maths-Grade-8-March-2024-QP-and-Memo",
+        "url": "papers/grade 8/mathematics/LP-VW-Maths-Grade-8-March-2024-QP-and-Memo.pdf"
+      },
+      {
+        "name": "GP-Maths-Grade-8-Revision-TEST-Term-1-2025-and-Memo",
+        "url": "papers/grade 8/mathematics/GP-Maths-Grade-8-Revision-TEST-Term-1-2025-and-Memo.pdf"
+      }
+    ],
+    "English HL": [
+      {
+        "name": "English-HL-Grade-8-Language-Exam-Nov-2017",
+        "url": "papers/grade 8/english hl/English-HL-Grade-8-Language-Exam-Nov-2017.pdf"
+      },
+      {
+        "name": "English-HL-Grade-8-Language-Exam-Nov-2017-MEMO",
+        "url": "papers/grade 8/english hl/English-HL-Grade-8-Language-Exam-Nov-2017-MEMO.pdf"
+      },
+      {
+        "name": "June-2017-G8-Eng HL-P2",
+        "url": "papers/grade 8/english hl/June-2017-G8-Eng HL-P2.pdf"
+      },
+      {
+        "name": "June-2017-G8-Eng HL-P2-MEMO",
+        "url": "papers/grade 8/english hl/June-2017-G8-Eng HL-P2-MEMO.pdf"
+      }
+    ],
+    "Afrikaans FAL": [
+      {
+        "name": "Afrikaans FAL 2018 June P2",
+        "url": "papers/grade 8/afrikaans fal/Afrikaans FAL 2018 June P2.pdf"
+      },
+      {
+        "name": "Afrikaans FAL 2018 June P1",
+        "url": "papers/grade 8/afrikaans fal/Afrikaans FAL 2018 June P1.pdf"
+      },
+      {
+        "name": "Afrikaans FAL 2018 March Test",
+        "url": "papers/grade 8/afrikaans fal/Afrikaans FAL 2018 March Test.pdf"
+      },
+      {
+        "name": "Afrikaans FAL 2018 November P2",
+        "url": "papers/grade 8/afrikaans fal/Afrikaans FAL 2018 November P2.pdf"
+      },
+      {
+        "name": "Afrikaans FAL 2018 November P1",
+        "url": "papers/grade 8/afrikaans fal/Afrikaans FAL 2018 November P1.pdf"
+      },
+      {
+        "name": "Afrikaans FAL 2018 September Test",
+        "url": "papers/grade 8/afrikaans fal/Afrikaans FAL 2018 September Test.pdf"
+      }
+    ],
+    "Life Orientation": [
+      {
+        "name": "LO 2021 June Memo",
+        "url": "papers/grade 8/life orientation/LO 2021 June Memo.pdf"
+      },
+      {
+        "name": "LO 2021 June",
+        "url": "papers/grade 8/life orientation/LO 2021 June.pdf"
+      },
+      {
+        "name": "LO 2020 Nov Memo",
+        "url": "papers/grade 8/life orientation/LO 2020 Nov Memo.pdf"
+      },
+      {
+        "name": "LO 2020 Nov",
+        "url": "papers/grade 8/life orientation/LO 2020 Nov.pdf"
+      }
+    ]
+  },
+  "Grade 9": {
+    "Mathematics": [
+      {
+        "name": "Grade 9 Mathematics Nov Paper",
+        "url": "papers\\grade 8\\afrikaans fal\\papers.pdf"
+      },
+      {
+        "name": "Grade 9 Mathematics June Memo",
+        "url": "papers\\grade 8\\afrikaans fal\\papers.pdf"
+      }
+    ],
+    "English HL": [
+      {
+        "name": "Grade 9 English HL Nov Paper",
+        "url": "papers\\grade 8\\afrikaans fal\\papers.pdf"
+      }
+    ],
+    "Afrikaans FAL": [
+      {
+        "name": "Grade 9 Afrikaans FAL Paper 1",
+        "url": "papers\\grade 8\\afrikaans fal\\papers.pdf"
+      }
+    ],
+    "Life Orientation": [
+      {
+        "name": "Grade 9 LO Term Test",
+        "url": "papers\\grade 8\\afrikaans fal\\papers.pdf"
+      }
+    ]
+  },
+  "Grade 10": {
+    "Mathematics": [
+      {
+        "name": "Grade 10 Mathematics June Paper 1",
+        "url": "papers\\grade 8\\afrikaans fal\\papers.pdf"
+      },
+      {
+        "name": "Grade 10 Mathematics Nov Paper 2",
+        "url": "papers\\grade 8\\afrikaans fal\\papers.pdf"
+      }
+    ],
+    "English HL": [
+      {
+        "name": "Grade 10 English HL Literature Paper",
+        "url": "papers\\grade 8\\afrikaans fal\\papers.pdf"
+      }
+    ],
+    "Afrikaans FAL": [
+      {
+        "name": "Grade 10 Afrikaans FAL June Paper",
+        "url": "papers\\grade 8\\afrikaans fal\\papers.pdf"
+      }
+    ],
+    "Life Orientation": [
+      {
+        "name": "Grade 10 LO Project",
+        "url": "papers\\grade 8\\afrikaans fal\\papers.pdf"
+      }
+    ]
+  },
+  "Grade 11": {
+    "Mathematics": [
+      {
+        "name": "Grade 11 Mathematics Mock Exam",
+        "url": "papers\\grade 8\\afrikaans fal\\papers.pdf"
+      }
+    ],
+    "English HL": [
+      {
+        "name": "Grade 11 English HL June Exam",
+        "url": "papers\\grade 8\\afrikaans fal\\papers.pdf"
+      }
+    ],
+    "Afrikaans FAL": [
+      {
+        "name": "Grade 11 Afrikaans FAL Nov Paper",
+        "url": "papers\\grade 8\\afrikaans fal\\papers.pdf"
+      }
+    ],
+    "Life Orientation": [
+      {
+        "name": "Grade 11 LO Term Task",
+        "url": "papers\\grade 8\\afrikaans fal\\papers.pdf"
+      }
+    ]
+  },
+  "Grade 12": {
+    "Mathematics": [
+      {
+        "name": "Grade 12 Mathematics Nov Paper 1",
+        "url": "papers\\grade 8\\afrikaans fal\\papers.pdf"
+      },
+      {
+        "name": "Grade 12 Mathematics Nov Paper 2",
+        "url": "papers\\grade 8\\afrikaans fal\\papers.pdf"
+      }
+    ],
+    "English HL": [
+      {
+        "name": "Grade 12 English HL Nov Paper",
+        "url": "papers\\grade 8\\afrikaans fal\\papers.pdf"
+      }
+    ],
+    "Afrikaans FAL": [
+      {
+        "name": "Grade 12 Afrikaans FAL June Paper",
+        "url": "papers\\grade 8\\afrikaans fal\\papers.pdf"
+      }
+    ],
+    "Life Orientation": [
+      {
+        "name": "Grade 12 LO Common Task",
+        "url": "papers\\grade 8\\afrikaans fal\\papers.pdf"
+      }
+    ]
+  }
+}

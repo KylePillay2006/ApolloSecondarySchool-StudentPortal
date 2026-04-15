@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KSS Staff Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #F3BD00;
+            --primary-light: rgba(243,189,0,0.12);
+            --dark: #0C2B4B;
+            --navy: #122259;
+            --light: #F3F6F8;
+            --sidebar-w: 260px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Work Sans', sans-serif;
+            background: #f0f2f5;
+            color: var(--dark);
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* ---- SIDEBAR ---- */
+        .sidebar {
+            width: var(--sidebar-w);
+            background: var(--navy);
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            top: 0; left: 0;
+            height: 100vh;
+            z-index: 100;
+            overflow-y: auto;
+        }
+
+        .sidebar-logo {
+            padding: 28px 24px 24px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-box {
+            width: 42px; height: 42px;
+            background: var(--primary);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .logo-box i { font-size: 20px; color: var(--navy); }
+
+        .sidebar-logo h2 {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: white;
+        }
+        .sidebar-logo span {
+            display: block;
+            font-size: 0.65rem;
+            font-weight: 500;
+            color: rgba(255,255,255,0.4);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .staff-profile {
+            padding: 20px 24px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .avatar {
+            width: 42px; height: 42px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), #e0ad00);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--navy);
+            flex-shrink: 0;
+        }
+
+        .staff-info h4 {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: white;
+        }
+        .staff-info span {
+            font-size: 0.72rem;
+            color: rgba(255,255,255,0.45);
+            font-weight: 500;
+        }
+
+        .online-dot {
+            width: 8px; height: 8px;
+            background: #22c55e;
+            border-radius: 50%;
+            margin-left: auto;
+            flex-shrink: 0;
+            box-shadow: 0 0 0 2px rgba(34,197,94,0.3);
+        }
+
+        .nav-section {
+            padding: 20px 16px 8px;
+        }
+
+        .nav-section-label {
+            font-size: 0.65rem;
+            font-weight: 700;
+            color: rgba(255,255,255,0.3);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 0 8px;
+            margin-bottom: 8px;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 12px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin-bottom: 2px;
+            color: rgba(255,255,255,0.55);
+            font-size: 0.88rem;
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        .nav-item i {
+            width: 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .nav-item:hover {
+            background: rgba(255,255,255,0.07);
+            color: white;
+        }
+
+        .nav-item.active {
+            background: var(--primary);
+            color: var(--navy);
+            font-weight: 700;
+        }
+
+        .nav-item .badge-count {
+            margin-left: auto;
+            background: var(--primary);
+            color: var(--navy);
+            font-size: 0.65rem;
+            font-weight: 800;
+            padding: 2px 7px;
+            border-radius: 50px;
+        }
+
+        .nav-item.active .badge-count {
+            background: var(--navy);
+            color: var(--primary);
+        }
+
+        .sidebar-footer {
+            margin-top: auto;
+            padding: 16px;
+            border-top: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .btn-logout {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 14px;
+            background: rgba(239,68,68,0.1);
+            border: 1px solid rgba(239,68,68,0.2);
+            border-radius: 10px;
+            color: #f87171;
+            font-family: 'Work Sans', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+        }
+
+        .btn-logout:hover {
+            background: rgba(239,68,68,0.2);
+        }
+
+        /* ---- MAIN CONTENT ---- */
+        .main {
+            margin-left: var(--sidebar-w);
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Top Header */
+        .top-header {
+            background: white;
+            padding: 20px 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #e5e7eb;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        .top-header h1 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--navy);
+        }
+
+        .top-header p {
+            font-size: 0.82rem;
+            color: #9ca3af;
+            margin-top: 2px;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .icon-btn {
+            width: 40px; height: 40px;
+            border-radius: 10px;
+            background: var(--light);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6b7280;
+            font-size: 14px;
+            transition: all 0.2s;
+            position: relative;
+        }
+
+        .icon-btn:hover { background: #e5e7eb; color: var(--navy); }
+
+        .notif-dot {
+            position: absolute;
+            top: 8px; right: 8px;
+            width: 7px; height: 7px;
+            background: #ef4444;
+            border-radius: 50%;
+        }
+
+        /* Page Content */
+        .page-content {
+            padding: 32px;
+            flex: 1;
+        }
+
+        /* Stats Row */
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 32px;
+        }
+
+        .stat-card {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            border: 1px solid #e5e7eb;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+
+        .stat-icon {
+            width: 52px; height: 52px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .stat-icon.gold { background: rgba(243,189,0,0.15); color: #a07e00; }
+        .stat-icon.blue { background: rgba(18,34,89,0.1); color: var(--navy); }
+        .stat-icon.green { background: rgba(34,197,94,0.1); color: #16a34a; }
+        .stat-icon.red { background: rgba(239,68,68,0.1); color: #dc2626; }
+
+        .stat-info h3 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--navy);
+            line-height: 1;
+        }
+        .stat-info p {
+            font-size: 0.78rem;
+            color: #9ca3af;
+            font-weight: 500;
+            margin-top: 4px;
+        }
+
+        /* Content Grid */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+
+        .panel {
+            background: white;
+            border-radius: 16px;
+            border: 1px solid #e5e7eb;
+            overflow: hidden;
+        }
+
+        .panel-header {
+            padding: 20px 24px;
+            border-bottom: 1px solid #f3f4f6;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .panel-header h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        .panel-header span {
+            font-size: 0.78rem;
+            color: #9ca3af;
+        }
+
+        .btn-primary-sm {
+            background: var(--primary);
+            color: var(--navy);
+            border: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-family: 'Work Sans', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s;
+        }
+
+        .btn-primary-sm:hover { background: #e0ad00; }
+
+        /* Upload Form */
+        .upload-form {
+            padding: 24px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin-bottom: 14px;
+        }
+
+        .form-group {
+            margin-bottom: 14px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-group select,
+        .form-group input[type="text"],
+        .form-group input[type="date"],
+        .form-group textarea {
+            width: 100%;
+            padding: 10px 14px;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-family: 'Work Sans', sans-serif;
+            font-size: 0.9rem;
+            color: var(--dark);
+            background: #f9fafb;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .form-group select:focus,
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary);
+            background: white;
+        }
+
+        .drop-zone {
+            border: 2px dashed #d1d5db;
+            border-radius: 10px;
+            padding: 28px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            background: #fafafa;
+            margin-bottom: 14px;
+        }
+
+        .drop-zone:hover, .drop-zone.dragover {
+            border-color: var(--primary);
+            background: rgba(243,189,0,0.04);
+        }
+
+        .drop-zone i { font-size: 2rem; color: #9ca3af; margin-bottom: 10px; display: block; }
+        .drop-zone p { font-size: 0.85rem; color: #6b7280; font-weight: 500; }
+        .drop-zone span { font-size: 0.78rem; color: #9ca3af; }
+        .drop-zone .btn-browse {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 7px 18px;
+            background: var(--navy);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-family: 'Work Sans', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 13px;
+            background: var(--primary);
+            color: var(--navy);
+            border: none;
+            border-radius: 10px;
+            font-family: 'Work Sans', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 800;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.2s;
+        }
+
+        .btn-submit:hover { background: #e0ad00; transform: translateY(-1px); }
+
+        /* Recent Items */
+        .recent-list { padding: 0; }
+
+        .recent-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 16px 24px;
+            border-bottom: 1px solid #f3f4f6;
+            transition: background 0.2s;
+        }
+
+        .recent-item:last-child { border-bottom: none; }
+        .recent-item:hover { background: #fafafa; }
+
+        .file-icon {
+            width: 40px; height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .file-icon.pdf { background: rgba(239,68,68,0.1); color: #dc2626; }
+        .file-icon.notice { background: rgba(243,189,0,0.15); color: #a07e00; }
+
+        .recent-item-info { flex: 1; min-width: 0; }
+        .recent-item-info h4 {
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--navy);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .recent-item-info p {
+            font-size: 0.75rem;
+            color: #9ca3af;
+            margin-top: 2px;
+        }
+
+        .item-badge {
+            padding: 4px 10px;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .item-badge.grade { background: rgba(18,34,89,0.08); color: var(--navy); }
+        .item-badge.all { background: rgba(34,197,94,0.1); color: #16a34a; }
+        .item-badge.important { background: rgba(239,68,68,0.1); color: #dc2626; }
+
+        .item-actions {
+            display: flex;
+            gap: 6px;
+        }
+
+        .btn-icon-action {
+            width: 30px; height: 30px;
+            border-radius: 6px;
+            border: 1px solid #e5e7eb;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 12px;
+            color: #9ca3af;
+            transition: all 0.2s;
+        }
+
+        .btn-icon-action:hover { border-color: #dc2626; color: #dc2626; }
+
+        /* Toast notification */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--navy);
+            color: white;
+            padding: 16px 24px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transform: translateY(80px);
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            z-index: 999;
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .toast i { color: var(--primary); font-size: 18px; }
+
+        /* Tabs */
+        .tab-row {
+            display: flex;
+            gap: 4px;
+            padding: 16px 24px 0;
+            border-bottom: 2px solid #f3f4f6;
+        }
+
+        .tab-btn {
+            padding: 10px 18px;
+            background: none;
+            border: none;
+            border-bottom: 2px solid transparent;
+            margin-bottom: -2px;
+            font-family: 'Work Sans', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #9ca3af;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .tab-btn.active {
+            color: var(--navy);
+            border-bottom-color: var(--primary);
+        }
+
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+
+        /* Wide panel */
+        .wide-panel {
+            background: white;
+            border-radius: 16px;
+            border: 1px solid #e5e7eb;
+            overflow: hidden;
+            margin-bottom: 24px;
+        }
+
+        @media (max-width: 1100px) {
+            .stats-row { grid-template-columns: repeat(2, 1fr); }
+            .content-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .sidebar { transform: translateX(-100%); }
+            .main { margin-left: 0; }
+            .stats-row { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ========== SIDEBAR ========== -->
+<aside class="sidebar">
+    <div class="sidebar-logo">
+        <div class="logo-box">
+            <i class="fa fa-school"></i>
+        </div>
+        <div>
+            <h2>KSS</h2>
+            <span>Staff Portal</span>
+        </div>
+    </div>
+
+    <div class="staff-profile">
+        <div class="avatar">D</div>
+        <div class="staff-info">
+            <h4>Demo Staff</h4>
+            <span>Mathematics Educator</span>
+        </div>
+        <div class="online-dot"></div>
+    </div>
+
+    <div class="nav-section">
+        <div class="nav-section-label">Main</div>
+        <a href="#" class="nav-item active" onclick="setPage('dashboard')">
+            <i class="fa fa-th-large"></i> Dashboard
+        </a>
+        <a href="#" class="nav-item" onclick="setPage('pastpapers')">
+            <i class="fa fa-file-pdf"></i> Past Papers
+            <span class="badge-count">12</span>
+        </a>
+        <a href="#" class="nav-item" onclick="setPage('notices')">
+            <i class="fa fa-bell"></i> Notices
+            <span class="badge-count">5</span>
+        </a>
+        <a href="#" class="nav-item" onclick="setPage('timetables')">
+            <i class="fa fa-calendar-alt"></i> Timetables
+        </a>
+    </div>
+
+    <div class="nav-section">
+        <div class="nav-section-label">Settings</div>
+        <a href="#" class="nav-item">
+            <i class="fa fa-user"></i> My Profile
+        </a>
+        <a href="#" class="nav-item">
+            <i class="fa fa-cog"></i> Settings
+        </a>
+    </div>
+
+    <div class="sidebar-footer">
+        <a href="login.html" class="btn-logout">
+            <i class="fa fa-sign-out-alt"></i>
+            Sign Out
+        </a>
+    </div>
+</aside>
+
+
+<!-- ========== MAIN ========== -->
+<div class="main">
+
+    <!-- Top Header -->
+    <header class="top-header">
+        <div>
+            <h1 id="pageTitle">Dashboard</h1>
+            <p id="pageSubtitle">Wednesday, 15 April 2026 — Welcome back, Demo Staff</p>
+        </div>
+        <div class="header-actions">
+            <button class="icon-btn" title="Notifications">
+                <i class="fa fa-bell"></i>
+                <span class="notif-dot"></span>
+            </button>
+            <button class="icon-btn" title="Help">
+                <i class="fa fa-question-circle"></i>
+            </button>
+            <div class="avatar" style="width:40px;height:40px;border-radius:10px;font-size:15px;flex-shrink:0;">D</div>
+        </div>
+    </header>
+
+    <!-- Page Content -->
+    <div class="page-content">
+
+        <!-- Stats -->
+        <div class="stats-row">
+            <div class="stat-card">
+                <div class="stat-icon gold"><i class="fa fa-file-pdf"></i></div>
+                <div class="stat-info">
+                    <h3>48</h3>
+                    <p>Past Papers Uploaded</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon blue"><i class="fa fa-bell"></i></div>
+                <div class="stat-info">
+                    <h3>12</h3>
+                    <p>Active Notices</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon green"><i class="fa fa-users"></i></div>
+                <div class="stat-info">
+                    <h3>782</h3>
+                    <p>Students Enrolled</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon red"><i class="fa fa-download"></i></div>
+                <div class="stat-info">
+                    <h3>1.4k</h3>
+                    <p>Downloads This Term</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Upload + Recent Grid -->
+        <div class="content-grid">
+
+            <!-- Upload Panel with Tabs -->
+            <div class="panel">
+                <div class="tab-row">
+                    <button class="tab-btn active" onclick="switchTab('papers')">📄 Upload Past Paper</button>
+                    <button class="tab-btn" onclick="switchTab('notice')">📢 Post Notice</button>
+                </div>
+
+                <!-- Past Paper Tab -->
+                <div class="tab-content active upload-form" id="tab-papers">
+                    <div class="form-row">
+                        <div class="form-group" style="margin-bottom:0">
+                            <label>Grade</label>
+                            <select id="pp-grade">
+                                <option value="">Select Grade</option>
+                                <option>Grade 8</option>
+                                <option>Grade 9</option>
+                                <option>Grade 10</option>
+                                <option>Grade 11</option>
+                                <option>Grade 12</option>
+                            </select>
+                        </div>
+                        <div class="form-group" style="margin-bottom:0">
+                            <label>Subject</label>
+                            <select id="pp-subject">
+                                <option value="">Select Subject</option>
+                                <option>Mathematics</option>
+                                <option>Physical Sciences</option>
+                                <option>Life Sciences</option>
+                                <option>English</option>
+                                <option>Accounting</option>
+                                <option>History</option>
+                                <option>Geography</option>
+                                <option>Business Studies</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row" style="margin-top:14px;">
+                        <div class="form-group" style="margin-bottom:0">
+                            <label>Year</label>
+                            <select id="pp-year">
+                                <option>2025</option>
+                                <option>2024</option>
+                                <option>2023</option>
+                                <option>2022</option>
+                            </select>
+                        </div>
+                        <div class="form-group" style="margin-bottom:0">
+                            <label>Term / Paper</label>
+                            <select id="pp-term">
+                                <option>Term 1</option>
+                                <option>Term 2 (Mid-Year)</option>
+                                <option>Term 3</option>
+                                <option>Final Exam</option>
+                                <option>Trial Exam</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div style="margin-top:14px; margin-bottom:14px;">
+                        <div class="drop-zone" id="dropZone" ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)" ondrop="handleDrop(event)">
+                            <i class="fa fa-cloud-upload-alt"></i>
+                            <p id="dropText">Drag & drop your PDF here</p>
+                            <span>Supports PDF files up to 20MB</span><br>
+                            <button class="btn-browse" onclick="document.getElementById('fileInput').click()">Browse Files</button>
+                            <input type="file" id="fileInput" style="display:none;" accept=".pdf" onchange="handleFileSelect(event)">
+                        </div>
+                    </div>
+
+                    <button class="btn-submit" onclick="submitPaper()">
+                        <i class="fa fa-upload"></i>
+                        Upload Past Paper
+                    </button>
+                </div>
+
+                <!-- Notice Tab -->
+                <div class="tab-content upload-form" id="tab-notice">
+                    <div class="form-group">
+                        <label>Notice Title</label>
+                        <input type="text" id="notice-title" placeholder="e.g. Grade 12 Exam Timetable Released">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group" style="margin-bottom:0">
+                            <label>Applies To</label>
+                            <select id="notice-grade">
+                                <option value="All">All Grades</option>
+                                <option>Grade 8</option>
+                                <option>Grade 9</option>
+                                <option>Grade 10</option>
+                                <option>Grade 11</option>
+                                <option>Grade 12</option>
+                            </select>
+                        </div>
+                        <div class="form-group" style="margin-bottom:0">
+                            <label>Priority</label>
+                            <select id="notice-priority">
+                                <option value="normal">Normal</option>
+                                <option value="important">Important / Urgent</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group" style="margin-top:14px;">
+                        <label>Notice Date</label>
+                        <input type="date" id="notice-date">
+                    </div>
+                    <div class="form-group">
+                        <label>Notice URL / Link (optional)</label>
+                        <input type="text" id="notice-url" placeholder="https://...">
+                    </div>
+                    <button class="btn-submit" onclick="submitNotice()">
+                        <i class="fa fa-paper-plane"></i>
+                        Publish Notice
+                    </button>
+                </div>
+            </div>
+
+            <!-- Recent Activity -->
+            <div class="panel">
+                <div class="panel-header">
+                    <h3>Recent Uploads</h3>
+                    <span>Past 7 days</span>
+                </div>
+                <div class="recent-list" id="recentList">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+        </div>
+
+        <!-- All Notices Wide Panel -->
+        <div class="wide-panel">
+            <div class="panel-header">
+                <h3>📢 Active Notices</h3>
+                <button class="btn-primary-sm" onclick="switchTab('notice'); document.querySelectorAll('.tab-btn')[1].classList.add('active'); document.querySelectorAll('.tab-btn')[0].classList.remove('active');">
+                    <i class="fa fa-plus"></i> Add Notice
+                </button>
+            </div>
+            <div class="recent-list" id="noticesList">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast">
+    <i class="fa fa-check-circle"></i>
+    <span id="toastMsg">Uploaded successfully!</span>
+</div>
+
+<script>
+    // ---- Dummy Data ----
+    const recentUploads = [
+        { name: 'Maths P1 — Grade 12 Final 2024', type: 'pdf', grade: 'Grade 12', date: '14 Apr 2026' },
+        { name: 'Physical Sciences P2 — Grade 11', type: 'pdf', grade: 'Grade 11', date: '13 Apr 2026' },
+        { name: 'English FAL — Grade 10 Mid-Year', type: 'pdf', grade: 'Grade 10', date: '12 Apr 2026' },
+        { name: 'Life Sciences — Grade 9 Term 1', type: 'pdf', grade: 'Grade 9', date: '11 Apr 2026' },
+        { name: 'Accounting — Grade 12 Trial', type: 'pdf', grade: 'Grade 12', date: '10 Apr 2026' },
+    ];
+
+    const noticesData = [
+        { title: 'Grade 12 Trial Exam Timetable', grade: 'Grade 12', date: '2026-04-14', important: true },
+        { title: 'School Holiday — Freedom Day', grade: 'All', date: '2026-04-27', important: false },
+        { title: 'Parent-Teacher Meeting — Term 2', grade: 'All', date: '2026-04-20', important: true },
+        { title: 'Grade 10 Science Project Due', grade: 'Grade 10', date: '2026-04-18', important: false },
+        { title: 'Sports Day Postponed', grade: 'All', date: '2026-04-15', important: false },
+    ];
+
+    function renderRecent() {
+        const list = document.getElementById('recentList');
+        list.innerHTML = recentUploads.map(item => `
+            <div class="recent-item">
+                <div class="file-icon pdf"><i class="fa fa-file-pdf"></i></div>
+                <div class="recent-item-info">
+                    <h4>${item.name}</h4>
+                    <p>${item.date}</p>
+                </div>
+                <span class="item-badge grade">${item.grade}</span>
+                <div class="item-actions">
+                    <button class="btn-icon-action" title="Delete" onclick="removeItem(this)"><i class="fa fa-trash"></i></button>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    function renderNotices() {
+        const list = document.getElementById('noticesList');
+        list.innerHTML = noticesData.map((n, i) => `
+            <div class="recent-item">
+                <div class="file-icon notice"><i class="fa fa-bell"></i></div>
+                <div class="recent-item-info">
+                    <h4>${n.title}</h4>
+                    <p>${new Date(n.date).toLocaleDateString('en-ZA', { day:'numeric', month:'long', year:'numeric' })}</p>
+                </div>
+                <span class="item-badge ${n.grade === 'All' ? 'all' : 'grade'}">${n.grade}</span>
+                ${n.important ? '<span class="item-badge important">Urgent</span>' : ''}
+                <div class="item-actions">
+                    <button class="btn-icon-action" title="Delete" onclick="removeItem(this)"><i class="fa fa-trash"></i></button>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    function removeItem(btn) {
+        const item = btn.closest('.recent-item');
+        item.style.opacity = '0';
+        item.style.transition = 'opacity 0.3s';
+        setTimeout(() => item.remove(), 300);
+    }
+
+    function switchTab(tab) {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+
+        if (tab === 'papers') {
+            document.querySelectorAll('.tab-btn')[0].classList.add('active');
+            document.getElementById('tab-papers').classList.add('active');
+        } else {
+            document.querySelectorAll('.tab-btn')[1].classList.add('active');
+            document.getElementById('tab-notice').classList.add('active');
+        }
+    }
+
+    document.querySelectorAll('.tab-btn').forEach((btn, i) => {
+        btn.addEventListener('click', () => switchTab(i === 0 ? 'papers' : 'notice'));
+    });
+
+    function showToast(msg) {
+        const toast = document.getElementById('toast');
+        document.getElementById('toastMsg').textContent = msg;
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 3500);
+    }
+
+    function submitPaper() {
+        const grade = document.getElementById('pp-grade').value;
+        const subject = document.getElementById('pp-subject').value;
+        const year = document.getElementById('pp-year').value;
+        const term = document.getElementById('pp-term').value;
+        if (!grade || !subject) { showToastError('Please select a grade and subject.'); return; }
+
+        const name = `${subject} — ${grade} ${term} ${year}`;
+        recentUploads.unshift({ name, type: 'pdf', grade, date: 'Just now' });
+        if (recentUploads.length > 5) recentUploads.pop();
+        renderRecent();
+        document.getElementById('dropText').textContent = 'Drag & drop your PDF here';
+        showToast('✅ Past paper uploaded successfully!');
+    }
+
+    function submitNotice() {
+        const title = document.getElementById('notice-title').value.trim();
+        const grade = document.getElementById('notice-grade').value;
+        const priority = document.getElementById('notice-priority').value;
+        const date = document.getElementById('notice-date').value || new Date().toISOString().split('T')[0];
+        if (!title) { showToast('⚠️ Please enter a notice title.'); return; }
+
+        noticesData.unshift({ title, grade, date, important: priority === 'important' });
+        renderNotices();
+        document.getElementById('notice-title').value = '';
+        showToast('📢 Notice published successfully!');
+    }
+
+    // Drag & drop
+    function handleDragOver(e) {
+        e.preventDefault();
+        document.getElementById('dropZone').classList.add('dragover');
+    }
+    function handleDragLeave() {
+        document.getElementById('dropZone').classList.remove('dragover');
+    }
+    function handleDrop(e) {
+        e.preventDefault();
+        document.getElementById('dropZone').classList.remove('dragover');
+        const file = e.dataTransfer.files[0];
+        if (file) document.getElementById('dropText').textContent = `📎 ${file.name}`;
+    }
+    function handleFileSelect(e) {
+        const file = e.target.files[0];
+        if (file) document.getElementById('dropText').textContent = `📎 ${file.name}`;
+    }
+
+    function setPage(page) {
+        document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
+        event.currentTarget.classList.add('active');
+    }
+
+    // Init
+    renderRecent();
+    renderNotices();
+
+    // Set today's date on notice form
+    document.getElementById('notice-date').valueAsDate = new Date();
+</script>
+
+</body>
+</html>

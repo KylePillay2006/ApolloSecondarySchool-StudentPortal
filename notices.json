@@ -1,0 +1,75 @@
+{
+  "notices": [
+    {
+      "title": "Exam Timetable Released",
+      "date": "2025-07-24",
+      "grade": "Grade 12",
+      "url": "notices/all/Notices.pdf",
+      "important": true
+    },
+    {
+      "title": "Grade 10 Parents Meeting",
+      "date": "2025-07-20",
+      "grade": "Grade 10",
+      "url": "notices/all/Notices.pdf",
+      "important": false
+    },
+    {
+      "title": "Sports Day Schedule",
+      "date": "2025-08-01",
+      "grade": "Grade 8-12",
+      "url": "notices/all/Notices.pdf",
+      "important": true
+    },
+    {
+      "title": "School Closed for Public Holiday",
+      "date": "2025-08-09",
+      "grade": "All Grades",
+      "url": "notices/all/Notices.pdf",
+      "important": false
+    },
+    {
+      "title": "Math Olympiad Registration",
+      "date": "2025-07-30",
+      "grade": "Grade 9-12",
+      "url": "notices/all/Notices.pdf",
+      "important": true
+    },
+    {
+      "title": "Grade 11 Career Guidance Session",
+      "date": "2025-08-05",
+      "grade": "Grade 11",
+      "url": "notices/all/Notices.pdf",
+      "important": false
+    },
+    {
+      "title": "New Library Books Arrival",
+      "date": "2025-07-28",
+      "grade": "All Grades",
+      "url": "notices/all/Notices.pdf",
+      "important": false
+    },
+    {
+      "title": "School Photo Day",
+      "date": "2025-08-03",
+      "grade": "Grade 8-12",
+      "url": "notices/all/Notices.pdf",
+      "important": true
+    },
+    {
+      "title": "Art Competition Winners Announced",
+      "date": "2025-07-27",
+      "grade": "Grade 8-12",
+      "url": "notices/all/Notices.pdf",
+      "important": false
+    },
+    {
+      "title": "Parent-Teacher Conference Schedule",
+      "date": "2025-08-10",
+      "grade": "Grade 8-12",
+      "url": "notices/all/Notices.pdf",
+      "important": true
+    }
+  ]
+}
+

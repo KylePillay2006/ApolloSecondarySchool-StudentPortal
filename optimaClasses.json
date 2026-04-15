@@ -1,0 +1,52 @@
+{
+  "Grade 8": {
+    "Week 1": [
+      { "name": "Mathematics - Algebra Basics", "url": "optima/grade 8/week 1/optimaClasses.pdf" },
+      { "name": "English - Comprehension Skills", "url": "optima/grade 8/week 1/optimaClasses.pdf" },
+      { "name": "Natural Science - Cells", "url": "optima/grade 8/week 1/optimaClasses.pdf" }
+    ],
+    "Week 2": [
+      { "name": "Mathematics - Linear Equations", "url": "optima/grade 8/week 1/optimaClasses.pdf" },
+      { "name": "English - Creative Writing", "url": "optima/grade 8/week 1/optimaClasses.pdf" }
+    ]
+  },
+  "Grade 9": {
+    "Week 1": [
+      { "name": "Mathematics - Geometry Basics", "url": "optima/grade 8/week 1/optimaClasses.pdf" },
+      { "name": "Geography - Weather Systems", "url": "optima/grade 8/week 1/optimaClasses.pdf" }
+    ],
+    "Week 2": [
+      { "name": "Mathematics - Trigonometry Intro", "url": "optima/grade 8/week 1/optimaClasses.pdf" },
+      { "name": "History - World War II", "url": "optima/grade 8/week 1/optimaClasses.pdf" }
+    ]
+  },
+  "Grade 10": {
+    "Week 1": [
+      { "name": "Mathematics - Quadratic Equations", "url": "optima/grade 8/week 1/optimaClasses.pdf" },
+      { "name": "Physical Science - Atomic Structure", "url": "optima/grade 8/week 1/optimaClasses.pdf" }
+    ],
+    "Week 2": [
+      { "name": "Life Sciences - Genetics Intro", "url": "optima/grade 8/week 1/optimaClasses.pdf" }
+    ]
+  },
+  "Grade 11": {
+    "Week 1": [
+      { "name": "Mathematics - Functions", "url": "optima/grade 8/week 1/optimaClasses.pdf" },
+      { "name": "Economics - Supply & Demand", "url": "optima/grade 8/week 1/optimaClasses.pdf" }
+    ],
+    "Week 2": [
+      { "name": "Business Studies - Entrepreneurship", "url": "optima/grade 8/week 1/optimaClasses.pdf" }
+    ]
+  },
+  "Grade 12": {
+    "Week 1": [
+      { "name": "Mathematics - Calculus Basics", "url": "optima/grade 8/week 1/optimaClasses.pdf" },
+      { "name": "Physical Science - Organic Chemistry", "url": "optima/grade 8/week 1/optimaClasses.pdf" }
+    ],
+    "Week 2": [
+      { "name": "Life Sciences - Human Anatomy", "url": "optima/grade 8/week 1/optimaClasses.pdf" }
+    ]
+  }
+}
+
+
