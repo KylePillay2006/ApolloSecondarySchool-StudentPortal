@@ -50,38 +50,46 @@
                 <!-- First set of items -->
                 <div class="topbar-scroll d-flex align-items-center py-2">
                     <div class="d-flex align-items-center px-5">
-                        <small class="fa fa-bullhorn text-primary me-2"></small>
+                        <small class="fa fa-bullhorn text-primary me-2" aria-hidden="true"></small>
                         <small>Welcome to our new website!</small>
                     </div>
                     <div class="d-flex align-items-center px-5">
-                        <small class="fa fa-map-marker-alt text-primary me-2"></small>
-                        <small>30 Iris Ave, Kharwastan Chatsworth, 4092</small>
+                        <small class="fa fa-map-marker-alt text-primary me-2" aria-hidden="true"></small>
+                        <small>55 Collier Avenue, Chatsworth, KwaZulu-Natal, 4092, South Africa</small>
                     </div>
                     <div class="d-flex align-items-center px-5">
-                        <small class="far fa-clock text-primary me-2"></small>
+                        <small class="far fa-clock text-primary me-2" aria-hidden="true"></small>
                         <small>Mon - Fri : 07.30 AM - 02.30 PM</small>
                     </div>
                     <div class="d-flex align-items-center px-5">
-                        <small class="fa fa-phone-alt text-primary me-2"></small>
-                        <small>031 404 8508</small>
+                        <small class="fa fa-phone-alt text-primary me-2" aria-hidden="true"></small>
+                        <small>+27 31 401 4964</small>
                     </div>
                     <div class="d-flex align-items-center px-5">
-                        <a class="text-light me-3" href="https://www.facebook.com/"><i
-                                class="fab fa-facebook-f"></i></a>
-                        <a class="text-light me-3" href="https://x.com/"><i class="fab fa-twitter"></i></a>
-                        <a class="text-light" href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                        <a class="text-light me-3" href="https://www.facebook.com/" aria-label="Visit our Facebook page"
+                            title="Facebook">
+                            <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                        </a>
+                        <a class="text-light me-3" href="https://x.com/" aria-label="Visit our X (Twitter) page"
+                            title="X (Twitter)">
+                            <i class="fab fa-twitter" aria-hidden="true"></i>
+                        </a>
+                        <a class="text-light" href="https://www.instagram.com/" aria-label="Visit our Instagram page"
+                            title="Instagram">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                        </a>
                     </div>
                 </div>
 
-                <!-- Duplicate second set -->
-                <div class="topbar-scroll d-flex align-items-center py-2">
+                <!-- Duplicate second set (aria-hidden so screen readers don't repeat) -->
+                <div class="topbar-scroll d-flex align-items-center py-2" aria-hidden="true">
                     <div class="d-flex align-items-center px-5">
                         <small class="fa fa-bullhorn text-primary me-2"></small>
                         <small>Welcome to our new website!</small>
                     </div>
                     <div class="d-flex align-items-center px-5">
                         <small class="fa fa-map-marker-alt text-primary me-2"></small>
-                        <small>30 Iris Ave, Kharwastan Chatsworth, 4092</small>
+                        <small>55 Collier Avenue, Chatsworth, KwaZulu-Natal, 4092, South Africa<</small>
                     </div>
                     <div class="d-flex align-items-center px-5">
                         <small class="far fa-clock text-primary me-2"></small>
@@ -89,13 +97,18 @@
                     </div>
                     <div class="d-flex align-items-center px-5">
                         <small class="fa fa-phone-alt text-primary me-2"></small>
-                        <small>031 404 8508</small>
+                        <small>+27 31 401 4964</small>
                     </div>
                     <div class="d-flex align-items-center px-5">
-                        <a class="text-light me-3" href="https://www.facebook.com/"><i
-                                class="fab fa-facebook-f"></i></a>
-                        <a class="text-light me-3" href="https://x.com/"><i class="fab fa-twitter"></i></a>
-                        <a class="text-light" href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                        <a class="text-light me-3" href="https://www.facebook.com/" tabindex="-1">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a class="text-light me-3" href="https://x.com/" tabindex="-1">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a class="text-light" href="https://www.instagram.com/" tabindex="-1">
+                            <i class="fab fa-instagram"></i>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -107,7 +120,7 @@
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
         <a href="index.html" class="navbar-brand d-flex align-items-center border-end px-4 px-lg-5">
-            <h2 class="m-0"><i class="fa fa-school text-primary me-2"></i>KSS</h2>
+            <h2 class="m-0"><i class="fa fa-school text-primary me-2"></i>APOLLO</h2>
         </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
